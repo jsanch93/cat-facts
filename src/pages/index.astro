@@ -5,7 +5,7 @@ import '../styles/global.css';
 
 
 // data source
-const source = '';
+const source = 'https://cat-fact.herokuapp.com/facts';
 // fetch the data
 const res = await fetch(source); 
 // store retreived data
@@ -26,7 +26,7 @@ const data = await res.json();
 	<body>
 		
 		<header class="masthead">
-			<h1 class="site-title">Gallery</h1>
+			<h1 class="site-title">Catty Facty</h1>
 		</header>
 
 		<main id="content" class="main-area">
@@ -34,8 +34,12 @@ const data = await res.json();
 			<ul class="cards">
 		  
 				<!-- Your API Data -->
-
-		  
+				{
+				data.map((item) => 
+				<p>{item.text}</p>
+			
+			)}
+				
 			</ul>
 		  </main>
 		  
